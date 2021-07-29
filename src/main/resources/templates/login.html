@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Home</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+        content="Hotair Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //Meta tag Keywords -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all">
+
+</head>
+
+<body>
+
+    <!-- form section start -->
+    <section class="w3l-hotair-form">
+        <h1>方特游乐场</h1>
+        <div class="container">
+            <!-- /form -->
+            <div class="workinghny-form-grid">
+                <div class="main-hotair">
+                    <div class="alert-close">
+                        <span class="fa fa-close"></span>
+                    </div>
+
+<!--                    登录-->
+                    <div class="content-wthree" id="login" >
+                        <h2>登 录</h2>
+                        <p>到您的账户</p>
+                        <form action="/loginaction" method="post">
+                            <input type="text" class="text" name="playname" placeholder="用户名" required="" >
+                            <input type="password" class="password" name="playpwd" placeholder="密 码" required="">
+                            <input type="tel" class="fa-mobile-phone" name="playphone" placeholder="联系方式" required="" >
+                            <button class="btn" type="submit">登 录</button>
+                        </form>
+                        <p style="color: orangered"  th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p >
+                        <p>或与社交媒体联系</p>
+                        <div class="social-icons w3layouts">
+                            <ul>
+                                <li>
+                                    <a href="#url" class="facebook"><span class="fa fa-facebook"></span> </a>
+                                </li>
+                                <li>
+                                    <a href="#url" class="twitter"><span class="fa fa-twitter"></span> </a>
+                                </li>
+                                <li>
+                                    <a href="#url" class="pinterest"><span class="fa fa-pinterest"></span> </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="account">没有账户？<a href="#signup" onclick="toregister()">注 册</a></p>
+
+                    </div>
+
+<!--                    注册-->
+                    <div class="content-wthree" id="register" style="display: none">
+                        <h2>注 册</h2>
+                        <p>输入您的信息</p>
+                        <form action="/adduser" method="post">
+                            <input type="text" class="text" name="playname" placeholder="用户名" required="" >
+                            <input type="password" class="password" name="playpwd" placeholder="密 码" required="">
+                            <input type="tel" class="fa-mobile-phone" name="playphone" placeholder="联系方式" required="">
+                            <button class="btn" type="submit">注 册</button>
+                        </form>
+                        <p style="color: orangered"  th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p >
+                        <p>或与社交媒体联系</p>
+                        <div class="social-icons w3layouts">
+                            <ul>
+                                <li>
+                                    <a href="#url" class="facebook"><span class="fa fa-facebook"></span> </a>
+                                </li>
+                                <li>
+                                    <a href="#url" class="twitter"><span class="fa fa-twitter"></span> </a>
+                                </li>
+                                <li>
+                                    <a href="#url" class="pinterest"><span class="fa fa-pinterest"></span> </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="account">没有账户？<a href="#signup" onclick="login()">登录</a></p>
+
+                    </div>
+
+
+
+                    <div class="w3l_form align-self">
+                        <div class="left_grid_info">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //form -->
+        </div>
+        <!-- copyright-->
+        <div class="copyright text-center">
+            <p class="copy-footer-29">Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        </div>
+        <!-- //copyright-->
+    </section>
+    <!-- //form section start -->
+
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (c) {
+            $('.alert-close').on('click', function (c) {
+                $('.main-hotair').fadeOut('slow', function (c) {
+                    $('.main-hotair').remove();
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        function toregister() {
+            document.getElementById("login").style.display = "none";
+            document.getElementById("register").style.display = "";
+
+        }
+
+        function login() {
+            document.getElementById("register").style.display = "none";
+            document.getElementById("login").style.display = "";
+        }
+    </script>
+
+</body>
+
+</html>
